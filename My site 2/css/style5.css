@@ -1,0 +1,358 @@
+html,
+body {
+    font-family: Roboto;
+    height: 100%;
+    margin: 0;
+    padding: 0
+}
+
+.container {
+    width: 1200px;
+    min-height: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px gray;
+    /*position: relative*/
+}
+
+.header {
+    background: linear-gradient(to right, #eeeeee 0%, #eeeeee 100%)
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    height: 65px;
+    margin-top: 35px
+}
+
+.menu li {
+    margin-left: -4px;
+    display: inline-block;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-family: 'Segoe Ui';
+    color: #5b5b5b;
+    font-size: 19px;
+    font-weight: 400;
+    display: block;
+    height: 40px;
+    width: 113px;
+    line-height: 40px
+}
+
+.menu li a:hover {
+    background: url(../img/Layer.jpg);
+    color: white;
+}
+
+.menu li a:active {
+    color: #5b5b5b
+}
+
+.menu {
+    text-align: center;
+    padding: 0px
+}
+
+.content {
+    margin-top: 50px;
+    /*120px*/
+    padding-bottom: 60px
+}
+
+.menu li ul {
+    display: none
+}
+
+.menu li:hover ul {
+    display: block
+}
+
+.menu li ul li {
+    margin-top: 0px;
+    position: absolute;
+    margin-left: -153px;
+    background-color: white;
+    box-shadow: 0 0px 10px 1px white;
+    display: flex
+}
+
+.menu li ul li a {
+    font-size: 12px;
+    border-bottom: 1px solid lightgray;
+}
+
+.menu li:nth-child(2) {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray
+}
+
+.contentmain {
+    background: url(../img/fon6.jpg) no-repeat 0px 183px;
+    height: 338px;
+    margin-top: 0px;
+    padding: 100px 50px;
+}
+
+.h2main h2 {
+    text-align: center;
+    font-weight: normal
+}
+
+.product {
+    display: inline-block;
+}
+
+.product0 {
+    text-align: center;
+    margin: 100px
+}
+
+.product a:nth-child(2) {
+    text-decoration: none;
+    color: #424242;
+    display: block;
+    margin-left: -4px;
+}
+
+.product a:nth-child(2):hover {
+    background-image: url(../img/Layer.jpg);
+    background-size: 100% 100%;
+    color: white;
+    border-radius: 5px
+}
+
+.product2 a:nth-child(2) {
+    /*border-left: 1px solid gray;
+    border-right: 1px solid gray*/
+}
+
+footer {
+    width: 1200px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 100%);
+    color: black;
+    text-align: right;
+    line-height: 40px;
+    font-size: 12px;
+    box-shadow: 0 0 5px 1px lightgray;
+    margin: -40px auto
+}
+
+.footertext {
+    margin-right: 10px
+}
+
+.menu {
+    margin-top: -1px
+}
+
+.newmenu {
+    height: 40px;
+    background-color: white;
+    margin-top: 36px;
+    border: 1px solid lightgray;
+    width: 1200px;
+    box-sizing: border-box
+}
+
+.productst h1,
+.productst h3,
+.productst h4,
+.productst p {
+    text-align: center;
+}
+
+.productst h3 {
+    padding-top: 15px;
+    /*border-bottom: 1px solid black*/
+    ;
+    display: block;
+    width: 275px;
+    margin: 0 auto;
+    box-shadow: -0px 10px 10px -8px #91d572
+}
+
+.productst p {
+    color: #484343;
+    line-height: 22px
+}
+
+.productst p:first-letter {
+    color: crimson;
+    font-size: 20px
+}
+
+.descr {
+    height: 400px;
+    margin: 30px 200px
+}
+
+.descr1 {
+    float: left;
+    width: 400px;
+    height: 400px
+}
+
+.descr1 p {
+    height: 120px
+}
+
+.descr2 {
+    clear: both;
+    margin: 0 150px;
+    box-shadow: 0px 0px 10px 1px lightgray;
+    height: 280px
+}
+
+.productst a {
+    ;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: black;
+    /*padding: 10px*/
+}
+
+.descr3 {
+    margin: 30px 100px;
+    box-shadow: 0px 0px 10px 1px lightgray
+}
+
+.button a {
+    display: block;
+    border: 1px solid #bfbfbf;
+    color: #8c8c8c;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    background: linear-gradient(to bottom, #f2f2f2, #f2f2f2);
+    margin: 10px auto;
+    border-radius: 20px 20px;
+    text-transform: uppercase;
+    box-shadow: 0 0px 5px 0px green;
+}
+
+.button a:hover {
+    background: #91d572;
+    color: black;
+    box-shadow: none
+}
+
+.button a:active {
+    background: crimson;
+    color: white
+}
+
+.propertygood li {
+    list-style: url(../img/checkmark1.png)
+}
+
+.up {
+    display: block;
+    width: 70px;
+    margin: 0px auto;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    text-align: center
+}
+
+.up:hover:before {
+    content: "\2191"
+}
+
+.up:hover:after {
+    content: "\2191"
+}
+
+.map {
+    display: block;
+    width: 600px;
+    height: 374px;
+    float: right;
+    margin-right: 5%
+}
+
+.clr {
+    margin: 30px auto;
+    height: 10px;
+    clear: both
+}
+
+.pagecontact {
+    margin: 5%
+}
+
+.pagecontact h1,
+.pagecontact h4,
+.pagecontact p {
+    text-align: center
+}
+
+.h1contact {
+    box-shadow: 0px 10px 10px -8px #91d572;
+    display: block;
+    width: 250px;
+    margin: 0 auto
+}
+
+
+/*Форма*/
+
+fieldset {
+    border-radius: 30px 30px;
+    width: 200px;
+    /*height: 700px;*/
+    margin: 0px auto;
+}
+
+legend {
+    text-align: center
+}
+
+input[type="text"] {
+    width: 250px;
+    height: 20px;
+    font-family: "verdana";
+    color: darkgreen;
+}
+
+input {
+    text-transform: capitalize
+}
+
+.email:focus {
+    color: white;
+    background-color: lightgray
+}
+
+textarea {
+    font-family: verdana;
+    color: dimgray;
+    text-transform: capitalize
+}
+
+.adress {
+    border-radius: 30px 30px;
+    box-shadow: 0 0 20px gray;
+    width: 350px;
+    /*height: 730px;*/
+    padding: 10px;
+    float: left
+}
+
+.adress2 {
+    height: 225px;
+    float: right;
+    width: 400px;
+    margin-right: 15%;
+}
+
+.adress2 li {
+    margin-left: 25%
+}
