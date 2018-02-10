@@ -356,3 +356,4 @@ textarea {
 .adress2 li {
     margin-left: 25%
 }
+@media screen and (min-width: 300px) and (max-width:1000px){.container,.newmenu, footer, .descr1, .descr2, .map, .logo img, .contentmain, .adress, .adress2 {width: 100%} .descr2{float: none} .descr3, .descr2, .descr, .map {margin: 0} .up{padding-top: 25px} .contentmain, .adress {padding: 0} .adress2 ul{margin: 0 auto} 
