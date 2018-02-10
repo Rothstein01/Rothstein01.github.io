@@ -1,4 +1,4 @@
-html,
+    html,
 body {
     font-family: Roboto;
     height: 100%;
@@ -11,7 +11,6 @@ body {
     min-height: 100%;
     margin: 0 auto;
     box-shadow: 0 0 10px gray;
-    /*position: relative*/
 }
 
 .header {
@@ -45,7 +44,7 @@ body {
 }
 
 .menu li a:hover {
-    background: url(../img/Layer.jpg);
+    background: linear-gradient(to bottom, rgba(169, 219, 128, 1) 0%, rgba(150, 197, 111, 1) 100%);
     color: white;
 }
 
@@ -60,7 +59,6 @@ body {
 
 .content {
     margin-top: 50px;
-    /*120px*/
     padding-bottom: 60px
 }
 
@@ -77,13 +75,12 @@ body {
     position: absolute;
     margin-left: -153px;
     background-color: white;
-    box-shadow: 0 0px 10px 1px white;
+    box-shadow: 0 0px 1px 1px white;
     display: flex
 }
 
 .menu li ul li a {
     font-size: 12px;
-    border-bottom: 1px solid lightgray;
 }
 
 .menu li:nth-child(2) {
@@ -120,16 +117,15 @@ body {
 }
 
 .product a:nth-child(2):hover {
-    background-image: url(../img/Layer.jpg);
-    background-size: 100% 100%;
+    background: linear-gradient(to bottom, rgba(169, 219, 128, 1) 0%, rgba(150, 197, 111, 1) 100%);
     color: white;
     border-radius: 5px
 }
 
-.product2 a:nth-child(2) {
-    /*border-left: 1px solid gray;
-    border-right: 1px solid gray*/
-}
+/*.product2 a:nth-child(2) {
+    border-left: 1px solid gray; 
+     border-right: 1px solid gray
+}*/
 
 footer {
     width: 1200px;
@@ -169,8 +165,6 @@ footer {
 
 .productst h3 {
     padding-top: 15px;
-    /*border-bottom: 1px solid black*/
-    ;
     display: block;
     width: 275px;
     margin: 0 auto;
@@ -301,13 +295,9 @@ footer {
     margin: 0 auto
 }
 
-
-/*Форма*/
-
 fieldset {
     border-radius: 30px 30px;
     width: 200px;
-    /*height: 700px;*/
     margin: 0px auto;
 }
 
@@ -356,4 +346,47 @@ textarea {
 .adress2 li {
     margin-left: 25%
 }
-@media screen and (min-width: 300px) and (max-width:1000px){.container,.newmenu, footer, .descr1, .descr2, .map, .logo img, .contentmain, .adress, .adress2 {width: 100%} .descr2{float: none} .descr3, .descr2, .descr, .map {margin: 0} .up{padding-top: 25px} .contentmain, .adress {padding: 0} .adress2 ul{margin: 0 auto} 
+
+@media screen and (min-width: 300px) and (max-width:1000px) {
+    .container,
+    .newmenu,
+    footer,
+    .descr1,
+    .descr2,
+    .map,
+    .logo img,
+    .contentmain,
+    .adress,
+    .adress2,
+    textarea,
+    .descr1 img {
+        width: 100%
+    }
+    .descr2 {
+        float: none
+    }
+    .descr3,
+    .descr2,
+    .descr,
+    .map,
+    .adress2 {
+        margin: 0
+    }
+    .up {
+        padding-top: 25px
+    }
+    .contentmain,
+    .adress {
+        padding: 0
+    }
+    .adress2 ul,
+    .product0 {
+        margin: 0 auto
+    }
+    .h2main h2 {
+        font-size: 1.1em;
+        margin-top: 10%
+    }
+    .adress2 li {
+        margin-left: 20%
+    }
