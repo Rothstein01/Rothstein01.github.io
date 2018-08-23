@@ -1,3 +1,13 @@
+
+function rename(){
+ let nam = document.getElementsByTagName('a')[0];
+ if (nam.innerHTML === 'Таблица прогнозов') {
+  nam.innerHTML = 'Как ни гадай, а лучше <span>Манчестер Юнайтед</span> команды нет';
+ }
+ else {nam.innerHTML = 'Таблица прогнозов';}
+};
+
+
 let e = document.getElementById("inp3").value;
 let e2 = document.getElementById("inp3-2").value;
 let e3 = document.getElementById("inp3-3").value;
