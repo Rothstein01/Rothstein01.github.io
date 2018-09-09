@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="jquery-ui/themes/base/jquery-ui.css"> 
+</head>
+
+<body>
+  <h1 ><a href="#" onclick="rename()">Таблица прогнозов</a></h1>
+  <!--  -->
+  <table class="first">
+    <thead>
+      <tr>
+      <th colspan="9">Прогноз игрока: 1</th>
+      </tr>
+      <th colspan="5">Результат матча</th>
+      <th colspan="2">Прогноз</th>
+      <th colspan="2">Очки</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.</td>
+        <td>Спартак</td>
+        <td class="myinp"><input id="inp1" class="inter" type="text"></td>
+        <td class="myinp"><input id="inp12" class="inter" type="text"></td>
+        <td>ЦСКА</td>
+        <td class="myinp"><input id="inp2" class="inter" type="text"></td>
+        <td class="myinp"><input id="inp22" class="inter" type="text"></td>
+        <td>
+          <p id="output" class="ost"></p>
+        </td>
+        <td class="myinp"><input id="inp3" class="inter" type="text"> </td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>Зенит</td>
+        <td><input id="inp1-2" class="inter" type="text"></td>
+        <td><input id="inp12-2" class="inter" type="text"></td>
+        <td>Локомотив</td>
+        <td><input id="inp2-2" class="inter" type="text"> </td>
+        <td><input id="inp22-2" class="inter" type="text"></td>
+        <td>
+          <p id="output2" class="ost"></p>
+        </td>
+        <td><input id="inp3-2" class="inter" type="text"> </td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td>Рубин</td>
+        <td><input id="inp1-3" type="text" class="inter"></td>
+        <td><input id="inp12-3" type="text" class="inter"></td>
+        <td>Краснодар</td>
+        <td><input id="inp2-3" type="text" class="inter"></td>
+        <td><input id="inp22-3" type="text" class="inter"></td>
+        <td>
+          <p id="output3" class="ost"></p>
+        </td>
+        <td><input type="text" id="inp3-3" class="inter"></td>
+      </tr>
+      <tr>
+        <td>4.</td>
+        <td>Амкар</td>
+        <td><input id="inp1-4" type="text" class="inter"></td>
+        <td><input id="inp12-4" type="text" class="inter"></td>
+        <td>Динамо</td>
+        <td><input id="inp2-4" type="text" class="inter"></td>
+        <td><input id="inp22-4" type="text" class="inter"></td>
+        <td>
+          <p id="output4" class="ost"></p>
+        </td>
+        <td><input type="text" id="inp3-4" class="inter tot"></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th><button onclick="my(); my2(); my3(); my4(); total()">Расчет</button></th>
+        <th colspan="8">
+          <p id="totaloutput" class="tost"></p>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+  <!--<br>--> 
+  <button title="FAQ" class="ui-button help mybtstyle">?</button>
+  <button title="Показать рез-ты с сайта Sports.ru" class="ui-button  openresult mybtstyle">+</button>
+  <div id="dialog" title="FAQ">
+    <p>Для быстрого заполнения таблицы поставьте курсор в поле ввода и, введя значение, переходите к следующему полю с помощью клавиши "Tab".</p>
+    <p>Устанавливайте значение счета с помощью клавиш "↑" и "↓" на клавиатуре.</p>
+    <p>Смотрите рез-ты матчей на сайте Sports.ru, чтобы сразу вносить данные в таблицу, не переходя на другую вкладку.</p>
+    <p>Вы можете перемещать элементы страницы как вам угодно, для этого наведите курсор мыши на заголовок или любое пространство в границах элемента, кроме полей ввода и кнопок, затем зажмите левую клавишу мыши и двигайте мышью в нужном направлении.</p>
+  </div>
+  <div class="fotable">
+    <table class="result">
+      <caption>Результаты:</caption>
+      <tr>
+        <td>1.</td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'>
+        <datalist id="team">
+          <option value="Спартак"></option>
+          <option value="Зенит"></option>
+          <option value="Краснодар"></option>
+          <option value="Динамо"></option>
+          <option value="Локомотив"></option>
+          <option value="ЦСКА"></option>
+          <option value="Рубин"></option>
+          <option value="Анжи"></option>
+          <option value="Ахмат"></option>
+          <option value="Уфа"></option>
+          <option value="Урал"></option>
+          <option value="Енисей"></option>
+          <option value="Крылья Советов"></option>
+          <option value="Арсенал Тула"></option>
+          <option value="Ростов"></option>
+          <option value="Оренбург"></option>
+        </datalist>  
+        </td>
+        <td><input id="in1"  type="number" min="0" max="15" class="inter"></td>
+        <td><input id="in1-2"  type="number" min="0" max="15" class="inter"></td>
+        <td> <input type="text" list="team" class="team" placeholder='Выберите команду'>     
+        </tr>
+        <tr>
+        <td>2.</td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+      </tr>
+      <tr>
+        <td>4.</td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+      </tr>
+      <tr>
+        <td>5.</td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+      </tr>
+      <tr>
+        <td>6.</td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+      </tr>
+      <tr>
+        <td>7.</td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+      </tr>
+      <tr>
+        <td>8.</td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="text" list="team" class="team" placeholder='Выберите команду'></td>
+      </tr>
+      <tr>
+        <td colspan="3"> <button class="ui-button" onclick="for1()">Расчет</button></td>
+        <td colspan="2"> <button class="ui-button" onclick=" res()">Очистить</button></td>        
+      </tr>      
+      </table> <br>
+    <table class="forecast">
+      <caption>Прогноз игрока №1:</caption>
+      <tr>
+        <td>1.</td>
+        <td><input type="number" min="0" class="inter"></td>
+        <td><input type="number" min="0" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1" ></td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1" ></td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1" ></td>
+      </tr>
+      <tr>
+        <td>4.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1" ></td>
+      </tr>
+      <tr>
+        <td>5.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1" ></td>
+      </tr>
+      <tr>
+        <td>6.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1" ></td>
+      </tr>
+      <tr>
+        <td>7.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1" ></td>
+      </tr>
+      <tr>
+        <td>8.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td>
+        <p class="ost"></p>
+        </td>
+        <td><input type="text" class="interch" tabindex="-1" ></td>
+      </tr>
+      <tr class="tot">
+        <td colspan="4">Общее количество очков:</td>
+        <td class="totalscore"></td>
+      </tr>
+    </table>
+
+    <table class="forecast">
+      <caption>Прогноз игрока №2:</caption>
+      <tr>
+        <td>1.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1"></td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1"></td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1"></td>
+      </tr>
+      <tr>
+        <td>4.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1"></td>
+      </tr>
+      <tr>
+        <td>5.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1"></td>
+      </tr>
+      <tr>
+        <td>6.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1"></td>
+      </tr>
+      <tr>
+        <td>7.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1"></td>
+      </tr>
+      <tr>
+        <td>8.</td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><input type="number" min="0" max="15" class="inter"></td>
+        <td><p class="ost"></p></td>
+        <td><input type="text" class="interch" tabindex="-1"></td>
+      </tr>
+      <tr class="tot">
+        <td colspan="4">Общее количество очков:</td>
+        <td class="totalscore"></td>
+      </tr>
+    </table>
+  </div>
+  <p class="totalallplayer"></p>
+
+  <!-- 
+
+    <div class="button_result">
+      <button class="sports ui-button">Показать рез-ты с сайта Sports.ru</button>
+    </div>
+   -->
+
+ <div class="frame">
+  <iframe src="https://www.sports.ru/rfpl/calendar/" frameborder="0"></iframe>
+</div>
+  <script src="jquery/dist/jquery.min.js"></script>
+  <script src="jquery-ui/jquery-ui.js"></script>
+  <script src="main.js"></script>
+</body>
+  
+</html>
